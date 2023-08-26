@@ -32,6 +32,7 @@ extension GroupChatBlocExt on GroupChatBloc {
   User getUserFromId(String id) {
     return state.users.firstWhere(
       (e) => e.id == id,
+      //Return a user with name 'Unknown' if id is not recognised
       orElse: () => User(id: id, name: 'Unknown'),
     );
   }
