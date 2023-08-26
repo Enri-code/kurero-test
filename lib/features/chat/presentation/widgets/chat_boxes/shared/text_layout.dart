@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:kureko_test/features/chat/domain/entities/message.dart';
-import 'package:kureko_test/features/profile/bloc/profile_bloc.dart';
+import 'package:kurero_test/features/chat/domain/entities/message.dart';
+import 'package:kurero_test/features/profile/bloc/profile_bloc.dart';
 
 class TextLayout extends StatelessWidget {
   const TextLayout({Key? key, required this.message}) : super(key: key);

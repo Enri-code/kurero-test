@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:kureko_test/features/chat/domain/entities/message.dart';
-import 'package:kureko_test/features/chat/presentation/widgets/chat_boxes/sender_box_base.dart';
-import 'package:kureko_test/features/chat/presentation/widgets/chat_boxes/shared/text_layout.dart';
+import 'package:kurero_test/features/chat/domain/entities/message.dart';
+import 'package:kurero_test/features/chat/presentation/widgets/chat_boxes/sender_box_base.dart';
+import 'package:kurero_test/features/chat/presentation/widgets/chat_boxes/shared/text_layout.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
 class SenderChatText extends StatelessWidget {

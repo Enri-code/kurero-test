@@ -27,7 +27,7 @@ class _TitleBar extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
                 Text(
-                  'Kureko group',
+                  'Kurero group',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.w600,

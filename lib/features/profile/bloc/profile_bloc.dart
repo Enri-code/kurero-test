@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
-import 'package:kureko_test/features/chat/domain/entities/user.dart';
+import 'package:kurero_test/features/chat/domain/entities/user.dart';
 
 part 'profile_event.dart';
 part 'profile_state.dart';

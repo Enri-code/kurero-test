@@ -1,4 +1,4 @@
-package com.example.kureko_test
+package com.example.kurero_test
 
 import io.flutter.embedding.android.FlutterActivity
 

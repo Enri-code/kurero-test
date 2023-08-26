@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.kureko_test">
+    package="com.example.kurero_test">
    <application
-        android:label="kureko_test"
+        android:label="kurero_test"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

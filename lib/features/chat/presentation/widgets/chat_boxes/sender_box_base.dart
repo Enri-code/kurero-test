@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kureko_test/features/chat/presentation/widgets/chat_boxes/shared/chat_box.dart';
+import 'package:kurero_test/features/chat/presentation/widgets/chat_boxes/shared/chat_box.dart';
 
 class SenderChatBoxBase extends StatelessWidget {
   const SenderChatBoxBase({

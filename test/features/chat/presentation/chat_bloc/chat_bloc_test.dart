@@ -2,9 +2,9 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
-import 'package:kureko_test/features/chat/domain/entities/message.dart';
-import 'package:kureko_test/features/chat/domain/entities/user.dart';
-import 'package:kureko_test/features/chat/presentation/chat_bloc/chat_bloc.dart';
+import 'package:kurero_test/features/chat/domain/entities/message.dart';
+import 'package:kurero_test/features/chat/domain/entities/user.dart';
+import 'package:kurero_test/features/chat/presentation/chat_bloc/chat_bloc.dart';
 import 'package:mocktail/mocktail.dart';
 
 class MockStorage extends Mock implements Storage {}

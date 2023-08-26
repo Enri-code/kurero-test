@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kureko_test/core/theme/widgets_theme.dart';
+import 'package:kurero_test/core/theme/widgets_theme.dart';
 
 class ThemeBuilder {
   ThemeBuilder({Color primaryColor = Colors.blue, bool isDarkTheme = false}) {

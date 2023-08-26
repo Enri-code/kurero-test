@@ -1,4 +1,4 @@
-# kureko_test
+# kurero_test
 
 A new Flutter project.
 

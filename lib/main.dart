@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
-import 'package:kureko_test/core/theme/theme_data.dart';
-import 'package:kureko_test/features/chat/presentation/chat_bloc/chat_bloc.dart';
-import 'package:kureko_test/features/chat/presentation/screens/chat_screen.dart';
-import 'package:kureko_test/features/profile/bloc/profile_bloc.dart';
+import 'package:kurero_test/core/theme/theme_data.dart';
+import 'package:kurero_test/features/chat/presentation/chat_bloc/chat_bloc.dart';
+import 'package:kurero_test/features/chat/presentation/screens/chat_screen.dart';
+import 'package:kurero_test/features/profile/bloc/profile_bloc.dart';
 import 'package:path_provider/path_provider.dart';
 
 void main() async {
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => ProfileBloc()),
       ],
       child: MaterialApp(
-        title: 'Kureko',
+        title: 'Kurero',
         debugShowCheckedModeBanner: false,
         theme: ThemeBuilder(primaryColor: Colors.blue).theme,
         home: const ChatScreen(),
