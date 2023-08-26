@@ -34,7 +34,7 @@ void main() async {
   });
 
   blocTest<GroupChatBloc, GroupChatState>(
-    'emits [1 message] when messages are empty.',
+    'SetUsers emits correct [users] in parameter.',
     build: () => GroupChatBloc(),
     act: (bloc) => bloc.add(const SetUsers([User(id: '1', name: 'Laura')])),
     expect: () => const <GroupChatState>[
@@ -44,7 +44,7 @@ void main() async {
 
   group('test AddMessage', () {
     blocTest<GroupChatBloc, GroupChatState>(
-      'emits [1 message] when messages are empty.',
+      'AddMessage emits [1 message] when messages are empty.',
       build: () => GroupChatBloc(),
       act: (bloc) => bloc.add(const AddMessage(
         Message(data: 'Hi', senderId: '1'),
@@ -54,7 +54,7 @@ void main() async {
       ],
     );
     blocTest<GroupChatBloc, GroupChatState>(
-      'emits [second message] at first index.',
+      'AddMessage emits [new message] at first index.',
       build: () => GroupChatBloc(),
       seed: () =>
           const GroupChatState(messages: [Message(data: 'Hi', senderId: '1')]),
