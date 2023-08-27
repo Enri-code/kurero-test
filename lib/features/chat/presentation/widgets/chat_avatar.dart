@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
 
-class GroupAvatar extends StatelessWidget {
-  const GroupAvatar({
+class ChatAvatar extends StatelessWidget {
+  const ChatAvatar({
     Key? key,
-    this.size = 48,
+    this.imageUrl,
+    this.size = 42,
     this.decoration,
   }) : super(key: key);
 
   final double? size;
+  final String? imageUrl;
   final BoxDecoration? decoration;
 
   @override
   Widget build(BuildContext context) {
+    String value = imageUrl ?? '';
     return Container(
       width: size,
       height: size,
@@ -21,13 +24,14 @@ class GroupAvatar extends StatelessWidget {
             shape: BoxShape.circle,
             border: Border.all(color: Colors.white),
           ),
-      child: Padding(
-        padding: const EdgeInsets.all(8),
-        child: FittedBox(
-          fit: BoxFit.contain,
-          child: Icon(Icons.group_outlined, color: Colors.grey[300]),
-        ),
-      ),
+      child: Builder(builder: (context) {
+        return Image.network(
+          value,
+          fit: BoxFit.cover,
+          errorBuilder: (context, error, stackTrace) =>
+              Icon(Icons.people_outline, color: Colors.grey[300]),
+        );
+      }),
     );
   }
 }

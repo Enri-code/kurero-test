@@ -11,7 +11,7 @@ import 'package:kurero_test/features/chat/presentation/widgets/app_bar_button.da
 import 'package:kurero_test/features/chat/presentation/widgets/chat_boxes/receiver/text.dart';
 import 'package:kurero_test/features/chat/presentation/widgets/chat_boxes/sender/text.dart';
 import 'package:kurero_test/features/chat/presentation/widgets/unfocus_bg.dart';
-import 'package:kurero_test/features/chat/presentation/widgets/user_avatar.dart';
+import 'package:kurero_test/features/chat/presentation/widgets/chat_avatar.dart';
 import 'package:kurero_test/features/profile/bloc/profile_bloc.dart';
 
 part '../widgets/chat_app_bar.dart';
