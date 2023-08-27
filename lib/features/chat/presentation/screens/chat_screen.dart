@@ -116,8 +116,26 @@ class _Messages extends StatefulWidget {
   State<_Messages> createState() => _MessagesState();
 }
 
-class _MessagesState extends State<_Messages>
-    with SingleTickerProviderStateMixin {
+class _MessagesState extends State<_Messages> {
+  final controller = ScrollController();
+  bool showScrollButton = false;
+
+  @override
+  void initState() {
+    controller.addListener(() {
+      setState(() {
+        showScrollButton = controller.offset > 90;
+      });
+    });
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return UnfocusWidget(
@@ -146,14 +164,44 @@ class _MessagesState extends State<_Messages>
               ),
             );
           }
-          return ListView.builder(
-            reverse: true,
-            itemCount: state.messages.length,
-            physics: const BouncingScrollPhysics(),
-            padding: EdgeInsets.only(
-              bottom: MediaQuery.of(context).viewPadding.bottom,
-            ),
-            itemBuilder: (_, index) => _ChatBox(state.messages[index]),
+          return Stack(
+            children: [
+              ListView.builder(
+                reverse: true,
+                itemCount: state.messages.length,
+                physics: const BouncingScrollPhysics(),
+                controller: controller,
+                padding: EdgeInsets.only(
+                  bottom: MediaQuery.of(context).viewPadding.bottom,
+                ),
+                itemBuilder: (_, index) => _ChatBox(state.messages[index]),
+              ),
+              Positioned(
+                bottom: 8,
+                right: 10,
+                child: AnimatedOpacity(
+                  opacity: showScrollButton ? 1 : 0,
+                  duration: kRadialReactionDuration,
+                  child: IgnorePointer(
+                    ignoring: !showScrollButton,
+                    child: GestureDetector(
+                      onTap: () {
+                        controller.animateTo(0,
+                            duration: kTabScrollDuration, curve: Curves.easeIn);
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.all(3),
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.white,
+                        ),
+                        child: const Icon(Icons.arrow_downward_outlined),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
           );
         },
       ),
