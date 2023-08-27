@@ -31,9 +31,10 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   void initState() {
     if (context.read<GroupChatBloc>().state.users.isNotEmpty) {
+      // Start auto messaging chats with available users
       _setAutoMessages();
     } else {
-      // Add test users to group chat
+      // Add test users to GroupChatBloc. Used for testing purposes
       context.read<GroupChatBloc>().add(const SetUsers([
             User(id: '1', name: 'Laura'),
             User(id: '2', name: 'Ricky'),
@@ -49,10 +50,10 @@ class _ChatScreenState extends State<ChatScreen> {
   void _setAutoMessages() {
     timer?.cancel();
     final state = context.read<GroupChatBloc>().state;
-    // Add new message every few seconds, with random user and phrase
-    timer = Timer.periodic(
-      Duration(milliseconds: 1000 + Random().nextInt(6000)),
-      (_) {
+    // Add new message every few seconds, from randomly chosen user and textphrase
+    timer = Timer(
+      Duration(milliseconds: 300 + Random().nextInt(5000)),
+      () {
         context.read<GroupChatBloc>().add(AddMessage(
               Message(
                 data: generate(delimiter: ' '),
@@ -61,6 +62,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 timeSent: DateTime.now().toUtc(),
               ),
             ));
+        _setAutoMessages();
       },
     );
   }
