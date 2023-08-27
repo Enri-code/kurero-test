@@ -11,17 +11,16 @@ class _TitleBar extends StatelessWidget {
       type: MaterialType.transparency,
       child: Row(
         children: [
-          if (Navigator.of(context).canPop())
-            const Padding(
-              padding: EdgeInsets.only(left: 9),
-              child: BackButtonWhite(),
-            ),
-          const SizedBox(width: 8),
+          
+          const SizedBox(width: 10),
           const Padding(
-            padding: EdgeInsets.symmetric(vertical: 2),
-            child: GroupAvatar(size: 44),
+            padding: EdgeInsets.symmetric(vertical: 4),
+            child: ChatAvatar(
+              imageUrl:
+                  'https://media.licdn.com/dms/image/C4E0BAQE1rik2cu-AOw/company-logo_200_200/0/1675248221466?e=1701302400&v=beta&t=qnKNwy25RBBerSX6kiMNIdDkJbLILU0IWvKm1rFIckU',
+            ),
           ),
-          const SizedBox(width: 8),
+          const SizedBox(width: 12),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,9 +37,10 @@ class _TitleBar extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 12),
-          IconButton(
-              icon: const Icon(Icons.more_vert, color: Colors.white),
-              onPressed: () {}),
+          const Padding(
+            padding: EdgeInsets.all(8),
+            child: Icon(Icons.more_vert, color: Colors.white),
+          ),
         ],
       ),
     );
