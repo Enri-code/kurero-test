@@ -1,16 +1,12 @@
-# kurero_test
+# Kurero Task
 
-A new Flutter project.
+Welcome to Kurero's Group Chat test task.
 
-## Getting Started
+## Description
 
-This project is a starting point for a Flutter application.
+This Kurero project task was created to demonstrate a simple group chat application using Flutter, focusing on BLoC for state management. It utilizes the BLoC pattern for managing the application's state, as well as Hive storage to persist the chat messages. These are automatically handled with a package called **hydrated_bloc**.
 
-A few resources to get you started if this is your first Flutter project:
+## Project Structure
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Every feature is very well separated from each other and inside the feature, the UI code and business logic is separated as per 'Clean Architecture + Domain driven architecture' thereby providing the separation of concern.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
